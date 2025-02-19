@@ -1,0 +1,17 @@
+name: custom:united-weather-extension
+version: 6.0.0
+minDynatraceVersion: "1.277"
+author:
+  name: "AHEAD"
+
+python:
+  runtime:
+    module: united_weather_ext
+    version:
+      min: "3.10"
+
+  activation:
+    remote:
+      path: activationSchema.json
+    local:
+      path: activationSchema.json

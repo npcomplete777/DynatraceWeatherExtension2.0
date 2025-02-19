@@ -1,0 +1,112 @@
+{
+  "types": {
+    "dynatrace.datasource.python:united_weather_ext-endpoint": {
+      "type": "object",
+      "displayName": "United Weather Extension Endpoint",
+      "summaryPattern": "United Weather Extension",
+      "properties": {
+        "dynatraceToken": {
+          "displayName": "Dynatrace API Token",
+          "type": "secret",
+          "nullable": false,
+          "default": ""
+        },
+        "dynatraceBaseUrl": {
+          "displayName": "Dynatrace Base URL",
+          "type": "text",
+          "nullable": false,
+          "default": ""
+        },
+        "unitedHubs": {
+          "displayName": "Locations (JSON)",
+          "type": "text",
+          "nullable": false,
+          "default": "{}"
+        },
+        "temperatureUnit": {
+          "displayName": "Temperature Unit (1=F, 2=C, 3=Both)",
+          "type": "text",
+          "nullable": false,
+          "default": "3"
+        },
+        "pollingFrequency": {
+          "displayName": "Polling Frequency (seconds)",
+          "type": "text",
+          "nullable": false,
+          "default": "60"
+        },
+        "threadCount": {
+          "displayName": "Thread Count",
+          "type": "text",
+          "nullable": false,
+          "default": "8"
+        }
+      }
+    },
+    "pythonRemote": {
+      "type": "object",
+      "properties": {
+        "endpoints": {
+          "displayName": "United Weather Extension endpoint (Remote)",
+          "type": "list",
+          "items": {
+            "type": {
+              "$ref": "#/types/dynatrace.datasource.python:united_weather_ext-endpoint"
+            }
+          },
+          "nullable": false,
+          "minItems": 1,
+          "maxItems": 100,
+          "metaData": {
+            "addItemButton": "Add endpoint"
+          }
+        }
+      }
+    },
+    "pythonLocal": {
+      "type": "object",
+      "properties": {
+        "endpoints": {
+          "displayName": "United Weather Extension endpoint (Local)",
+          "type": "list",
+          "items": {
+            "type": {
+              "$ref": "#/types/dynatrace.datasource.python:united_weather_ext-endpoint"
+            }
+          },
+          "nullable": false,
+          "minItems": 1,
+          "maxItems": 100,
+          "metaData": {
+            "addItemButton": "Add endpoint"
+          }
+        }
+      }
+    }
+  },
+  "dynatrace": "1",
+  "description": "United Weather Extension configuration",
+  "schemaId": "python-extension.activation",
+  "displayName": "United Weather Extension configuration",
+  "ownerProductManagement": "dynatrace",
+  "ownerDevelopment": "dynatrace",
+  "maturity": "GENERAL_AVAILABILITY",
+  "allowedScopes": [
+    "tenant"
+  ],
+  "multiObject": false,
+  "properties": {
+    "pythonLocal": {
+      "displayName": "Python Local Extension",
+      "type": {
+        "$ref": "#/types/pythonLocal"
+      }
+    },
+    "pythonRemote": {
+      "displayName": "Python Remote Extension",
+      "type": {
+        "$ref": "#/types/pythonRemote"
+      }
+    }
+  }
+}

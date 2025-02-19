@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "description": "United Weather extension local test",
+  "version": "4.0.0",
+  "activationContext": "LOCAL",
+  "pythonRemote": {
+    "endpoints": [
+      {
+        "dynatraceToken": "dt0c01",
+        "dynatraceBaseUrl": "https://nxy41179.live.dynatrace.com",
+        "unitedHubs": "{\"ORD\":{\"name\":\"Chicago OHare\",\"lat\":\"41.8781\",\"lon\":\"-87.6298\"},\"IAH\":{\"name\":\"Houston\",\"lat\":\"29.9844\",\"lon\":\"-95.3414\"},\"EWR\":{\"name\":\"Newark\",\"lat\":\"40.6895\",\"lon\":\"-74.1745\"},\"DEN\":{\"name\":\"Denver\",\"lat\":\"39.8561\",\"lon\":\"-104.6737\"},\"SFO\":{\"name\":\"San Francisco\",\"lat\":\"37.6213\",\"lon\":\"-122.3790\"}}",
+        "temperatureUnit": "3",
+        "pollingFrequency": "60",
+        "threadCount": "8"
+      }
+    ]
+  }
+}
